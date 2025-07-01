@@ -1,0 +1,66 @@
+---
+description: High level overview of this repository
+globs: **/*
+alwaysApply: true
+---
+
+
+
+# High Level Overview of the Repository
+
+This repository contains a software project, likely a web application, given the presence of frontend and backend components. The file summary suggests a focus on code analysis and automated processes, potentially for code review or AI-assisted development. The exclusion of various file types indicates a focus on source code and configuration files.
+
+# Technologies Used
+
+*   **Frontend:** Likely uses JavaScript, HTML, and CSS for the user interface. The presence of build configurations and potential minified files suggests a modern frontend development workflow.
+*   **Backend:** The presence of Go files indicates Go is used for backend development.
+*   **Database:** The database technology is not explicitly mentioned, but the presence of migrations suggests the usage of a database.
+*   **Build System:** Likely uses a build system like `npm` or `go build` depending on the backend and frontend technology used.
+
+# Top Level Folders Structure
+
+The provided information does not include the directory structure, therefore, I am unable to analyze the top-level folders.
+
+# Code Organization
+
+Based on the general characteristics of software projects, the code is likely organized as follows:
+
+*   **Frontend:** The frontend code is likely organized into components, pages, and utilities. Components would encapsulate reusable UI elements, pages represent different views or sections of the application, and utilities contain helper functions or modules.
+*   **Backend:** The backend code is likely organized into modules or packages, each responsible for specific functionalities (e.g., user authentication, data access, business logic).
+*   **Configuration:** Configuration files, such as `.env` files or configuration files in the backend, are used to manage the application's settings.
+
+# Notable Patterns
+
+Without the code content, it is difficult to determine specific design patterns. However, common patterns in web applications include:
+
+*   **Model-View-Controller (MVC) or Model-View-ViewModel (MVVM):** For structuring the frontend code.
+*   **RESTful API:** For the backend to expose functionalities.
+*   **Dependency Injection:** Common in Go applications for managing dependencies.
+
+# Testing Approach
+
+The testing approach is not explicitly mentioned. However, based on general practices, the testing approach likely includes:
+
+*   **Unit Tests:** To verify the functionality of individual components or modules.
+*   **Integration Tests:** To verify interactions between different components or modules.
+*   **End-to-End Tests:** To simulate user interactions and test the entire application flow.
+
+# Other Important Details
+
+*   **Build Process:**
+    *   The build process is likely automated, using tools like `npm` for the frontend and `go build` for the backend.
+    *   Build commands would include tasks such as dependency installation, code compilation, and asset minification.
+*   **Database Schema and Upgrades:**
+    *   The presence of migrations suggests the use of a database and a system for managing database schema changes.
+    *   Database schema upgrades are likely handled through migration scripts.
+*   **Documentation:**
+    *   Documentation is not directly mentioned, but it is expected that there is documentation that explains the usage and functionality of the application.
+*   **Deployment:**
+    *   Deployment details are not present in the provided summary.
+*   **Programming Languages:**
+    *   Go is used for backend development.
+    *   JavaScript, HTML, and CSS are used for frontend development.
+
+# User experience flows
+
+The provided information does not include details about user interface, therefore, I am unable to analyze user experience flows.
