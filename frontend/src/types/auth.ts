@@ -63,6 +63,10 @@ export interface ApiResponse<T = any> {
   data?: T;
 }
 
+export interface UserProfileResponse {
+  user: User;
+}
+
 export interface ApiError {
   message: string;
   errors?: string[];

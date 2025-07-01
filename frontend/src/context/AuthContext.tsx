@@ -39,8 +39,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       const token = localStorage.getItem('access_token');
       if (token) {
         try {
-          const userData = await authService.getProfile();
-          console.log('User data loaded:', userData);
+          const response = await authService.getProfile();
+          
+          // API возвращает {user: ...}, извлекаем user
+          const userData = response.user || response;
           
           // Убеждаемся что roles и permissions являются массивами
           const safeUserData = {
@@ -84,9 +86,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   };
 
   const hasRole = (role: string): boolean => {
-    const result = user?.roles?.includes(role) || false;
-    console.log('hasRole проверка:', { user: user?.username, userRoles: user?.roles, requiredRole: role, result });
-    return result;
+    return user?.roles?.includes(role) || false;
   };
 
   const hasPermission = (permission: string): boolean => {

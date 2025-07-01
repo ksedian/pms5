@@ -11,9 +11,11 @@ import {
   Chip,
 } from '@mui/material';
 import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const DashboardPage: React.FC = () => {
   const { user, logout, hasRole } = useAuth();
+  const navigate = useNavigate();
 
   if (!user) {
     return <Typography>Загрузка...</Typography>;
@@ -93,7 +95,7 @@ const DashboardPage: React.FC = () => {
                 </Typography>
                 <Button
                   variant="contained"
-                  href="/admin"
+                  onClick={() => navigate('/admin')}
                   sx={{ mt: 2 }}
                 >
                   Админ панель

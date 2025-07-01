@@ -1,5 +1,5 @@
 import { apiClient, handleApiError } from './apiClient';
-import { LoginRequest, LoginResponse, User, TwoFactorSetupResponse } from '../types/auth';
+import { LoginRequest, LoginResponse, User, TwoFactorSetupResponse, UserProfileResponse } from '../types/auth';
 
 class AuthService {
   async login(credentials: LoginRequest): Promise<LoginResponse> {
@@ -20,9 +20,9 @@ class AuthService {
     }
   }
 
-  async getProfile(): Promise<User> {
+  async getProfile(): Promise<UserProfileResponse> {
     try {
-      const response = await apiClient.get<User>('/api/auth/profile');
+      const response = await apiClient.get<UserProfileResponse>('/api/auth/profile');
       return response.data;
     } catch (error) {
       throw handleApiError(error);
