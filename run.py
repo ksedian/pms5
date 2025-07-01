@@ -1,7 +1,11 @@
 import os
+from dotenv import load_dotenv
 from app import create_app, db
 from app.models import User, Role, Permission, AuditLog
 from app.seed_data import seed_all
+
+# Load environment variables from .env file
+load_dotenv()
 
 def create_tables():
     """Create database tables"""

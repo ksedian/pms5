@@ -270,7 +270,7 @@ class AuditLog(db.Model):
     ip_address = db.Column(db.String(45), nullable=True)  # IPv6 support
     user_agent = db.Column(db.Text, nullable=True)
     success = db.Column(db.Boolean, nullable=False, index=True)
-    metadata = db.Column(db.Text, nullable=True)  # JSON string for additional data
+    event_metadata = db.Column(db.Text, nullable=True)  # JSON string for additional data
     timestamp = db.Column(db.DateTime, default=datetime.utcnow, nullable=False, index=True)
     
     # Relationship
@@ -285,7 +285,7 @@ class AuditLog(db.Model):
         self.username = username
         self.ip_address = ip_address
         self.user_agent = user_agent
-        self.metadata = json.dumps(metadata) if metadata else None
+        self.event_metadata = json.dumps(metadata) if metadata else None
     
     def to_dict(self):
         """Convert audit log to dictionary for API responses"""
@@ -297,6 +297,6 @@ class AuditLog(db.Model):
             'event_description': self.event_description,
             'ip_address': self.ip_address,
             'success': self.success,
-            'metadata': json.loads(self.metadata) if self.metadata else None,
+            'metadata': json.loads(self.event_metadata) if self.event_metadata else None,
             'timestamp': self.timestamp.isoformat()
         } 

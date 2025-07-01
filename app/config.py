@@ -25,6 +25,10 @@ class Config:
     TWILIO_AUTH_TOKEN = os.environ.get('TWILIO_AUTH_TOKEN')
     TWILIO_PHONE_NUMBER = os.environ.get('TWILIO_PHONE_NUMBER')
     
+    # SMS Configuration
+    SMS_PROVIDER = os.environ.get('SMS_PROVIDER', 'mock')  # 'mock' or 'twilio'
+    SMS_ENABLED = os.environ.get('SMS_ENABLED', 'False').lower() == 'true'
+    
     # Application Name for TOTP
     APP_NAME = 'MES Authentication'
 
