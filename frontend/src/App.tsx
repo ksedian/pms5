@@ -7,10 +7,16 @@ import { lightTheme, darkTheme } from './theme/theme';
 import ProtectedRoute from './components/Common/ProtectedRoute';
 import LoginForm from './components/Auth/LoginForm';
 
-// Pages (будем создавать по мере необходимости)
+// Pages
 import DashboardPage from './pages/DashboardPage';
 import AdminPage from './pages/AdminPage';
 import UnauthorizedPage from './pages/UnauthorizedPage';
+
+// Routes Pages
+import RoutesListPage from './pages/Routes/RoutesListPage';
+import RouteEditorPage from './pages/Routes/RouteEditorPage';
+import RouteViewPage from './pages/Routes/RouteViewPage';
+import RouteHistoryPage from './pages/Routes/RouteHistoryPage';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -43,6 +49,48 @@ function App() {
               element={
                 <ProtectedRoute requiredRole="admin">
                   <AdminPage />
+                </ProtectedRoute>
+              }
+            />
+            
+            {/* Технологические маршруты */}
+            <Route
+              path="/routes"
+              element={
+                <ProtectedRoute>
+                  <RoutesListPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/routes/new"
+              element={
+                <ProtectedRoute requiredPermission="create_route">
+                  <RouteEditorPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/routes/:id/edit"
+              element={
+                <ProtectedRoute requiredPermission="edit_route">
+                  <RouteEditorPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/routes/:id/view"
+              element={
+                <ProtectedRoute requiredPermission="view_route">
+                  <RouteViewPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/routes/:id/history"
+              element={
+                <ProtectedRoute requiredPermission="view_route">
+                  <RouteHistoryPage />
                 </ProtectedRoute>
               }
             />

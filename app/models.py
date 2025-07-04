@@ -340,11 +340,15 @@ class TechnologicalRoute(db.Model):
                                backref=db.backref('routes', lazy=True))
     versions = db.relationship('RouteVersion', backref='route', cascade='all, delete-orphan')
     
-    def __init__(self, name, route_number, created_by, description=None):
+    def __init__(self, name, route_number, created_by, description=None, status='draft', 
+                 estimated_duration=None, complexity_level='medium'):
         self.name = name
         self.route_number = route_number
         self.created_by = created_by
         self.description = description
+        self.status = status
+        self.estimated_duration = estimated_duration
+        self.complexity_level = complexity_level
     
     def create_version(self, description=None, user_id=None):
         """Создать новую версию маршрута"""
@@ -416,12 +420,15 @@ class Operation(db.Model):
     # Relationships
     creator = db.relationship('User', backref='created_operations')
     
-    def __init__(self, name, operation_code, operation_type, created_by, description=None):
+    def __init__(self, name, operation_code, operation_type, created_by, description=None,
+                 setup_time=0.0, operation_time=0.0):
         self.name = name
         self.operation_code = operation_code
         self.operation_type = operation_type
         self.created_by = created_by
         self.description = description
+        self.setup_time = setup_time
+        self.operation_time = operation_time
     
     def get_total_time(self):
         """Получить общее время операции"""
@@ -489,13 +496,17 @@ class BOMItem(db.Model):
     technological_route = db.relationship('TechnologicalRoute', backref='bom_items')
     versions = db.relationship('BOMVersion', backref='bom_item', cascade='all, delete-orphan')
     
-    def __init__(self, part_number, name, created_by, parent_id=None, quantity=1.0, unit='шт'):
+    def __init__(self, part_number, name, created_by, parent_id=None, quantity=1.0, unit='шт',
+                 is_assembly=False, cost_per_unit=None, description=None):
         self.part_number = part_number
         self.name = name
         self.created_by = created_by
         self.parent_id = parent_id
         self.quantity = quantity
         self.unit = unit
+        self.is_assembly = is_assembly
+        self.cost_per_unit = cost_per_unit
+        self.description = description
         self._calculate_level()
     
     def _calculate_level(self):

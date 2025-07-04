@@ -23,3 +23,231 @@ nohup: ignoring input
 127.0.0.1 - - [04/Jul/2025 13:16:39] "GET /api/bom HTTP/1.1" 200 -
 127.0.0.1 - - [04/Jul/2025 13:16:39] "GET /api/routes HTTP/1.1" 200 -
 127.0.0.1 - - [04/Jul/2025 13:16:39] "GET /api/operations HTTP/1.1" 200 -
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/app/bom_management/routes.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/app/bom_management/routes.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/app/bom_management/routes.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/app/bom_management/routes.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/app/bom_management/routes.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/app/bom_management/routes.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/app/bom_management/routes.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/app/bom_management/routes.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/app/bom_management/routes.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/app/routes_management/routes.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/app/routes_management/routes.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/app/bom_management/routes.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/app/bom_management/routes.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/__init__.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/conftest.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/unit/__init__.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/unit/test_models.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/unit/test_models.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/unit/test_models.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/unit/test_models.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/error/__init__.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/error/test_routes_errors.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/integration/test_routes_api.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/integration/test_bom_api.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/integration/__init__.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/integration/test_bom_api.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/error/test_bom_errors.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/error/test_bom_errors.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/error/test_bom_errors.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/error/test_bom_errors.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/error/test_bom_errors.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/performance/test_load.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/integration/__init__.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/conftest.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/tests/conftest.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+ * Detected change in '/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/app/utils.py', reloading
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/run.py", line 21, in <module>
+    app = create_app('development')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/app/__init__.py", line 63, in create_app
+    from app.auth import bp as auth_bp
+  File "/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/app/auth/__init__.py", line 5, in <module>
+    from app.auth import routes 
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/app/auth/routes.py", line 4, in <module>
+    from app.utils import log_audit_event, get_current_user
+  File "/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/app/utils.py", line 9, in <module>
+    import bleach
+ModuleNotFoundError: No module named 'bleach'
