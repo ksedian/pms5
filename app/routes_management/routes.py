@@ -4,7 +4,7 @@ import json
 from app import db
 from app.models import TechnologicalRoute, Operation, User, RouteVersion, Archive
 from app.routes_management import bp
-from app.utils import require_permission, log_audit_event
+from app.utils import require_permission, log_audit_event, validate_route_data
 from sqlalchemy.exc import IntegrityError
 from datetime import datetime
 
@@ -39,11 +39,15 @@ def get_routes():
         log_audit_event('routes_list_viewed', 'Просмотр списка технологических маршрутов', True)
         
         return jsonify({
-            'routes': [route.to_dict() for route in routes.items],
-            'total': routes.total,
-            'pages': routes.pages,
-            'current_page': page,
-            'per_page': per_page
+            'data': [route.to_dict() for route in routes.items],
+            'pagination': {
+                'total': routes.total,
+                'pages': routes.pages,
+                'current_page': page,
+                'per_page': per_page,
+                'has_next': routes.has_next,
+                'has_prev': routes.has_prev
+            }
         })
         
     except Exception as e:
@@ -58,12 +62,11 @@ def create_route():
     try:
         data = request.get_json()
         
-        # Валидация
-        if not data.get('name'):
-            return jsonify({'error': 'Название маршрута обязательно'}), 400
-        
-        if not data.get('route_number'):
-            return jsonify({'error': 'Номер маршрута обязателен'}), 400
+        # Комплексная валидация и санитизация
+        try:
+            data = validate_route_data(data)
+        except ValueError as e:
+            return jsonify({'error': str(e)}), 400
         
         current_user_id = get_jwt_identity()
         
@@ -110,7 +113,9 @@ def create_route():
 def get_route(route_id):
     """Получить технологический маршрут по ID"""
     try:
-        route = TechnologicalRoute.query.get_or_404(route_id)
+        route = TechnologicalRoute.query.get(route_id)
+        if not route:
+            return jsonify({'error': 'Маршрут не найден'}), 404
         
         log_audit_event('route_viewed', f'Просмотр маршрута: {route.name}', True)
         
@@ -118,7 +123,7 @@ def get_route(route_id):
         
     except Exception as e:
         log_audit_event('route_view_error', f'Ошибка при получении маршрута {route_id}: {str(e)}', False)
-        return jsonify({'error': 'Ошибка при получении маршрута'}), 500
+        return jsonify({'error': 'Внутренняя ошибка сервера'}), 500
 
 @bp.route('/api/routes/<int:route_id>', methods=['PUT'])
 @jwt_required()
@@ -126,7 +131,9 @@ def get_route(route_id):
 def update_route(route_id):
     """Обновить технологический маршрут"""
     try:
-        route = TechnologicalRoute.query.get_or_404(route_id)
+        route = TechnologicalRoute.query.get(route_id)
+        if not route:
+            return jsonify({'error': 'Маршрут не найден'}), 404
         data = request.get_json()
         
         # Проверка версии для контроля конкурентности
@@ -141,6 +148,12 @@ def update_route(route_id):
         
         # Создать версию перед изменением
         route.create_version('Автосохранение перед изменением', current_user_id)
+        
+        # Валидация данных обновления
+        try:
+            data = validate_route_data(data)
+        except ValueError as e:
+            return jsonify({'error': str(e)}), 400
         
         # Обновление полей
         if 'name' in data:
@@ -303,4 +316,82 @@ def create_route_version(route_id):
         
     except Exception as e:
         db.session.rollback()
-        return jsonify({'error': 'Ошибка при создании версии маршрута'}), 500 
+        return jsonify({'error': 'Ошибка при создании версии маршрута'}), 500
+
+@bp.route('/api/routes/<int:route_id>/versions/<int:version_id>', methods=['GET'])
+@jwt_required()
+@require_permission('routes:read')
+def get_route_version(route_id, version_id):
+    """Получить конкретную версию маршрута"""
+    try:
+        route = TechnologicalRoute.query.get_or_404(route_id)
+        version = RouteVersion.query.filter_by(route_id=route_id, id=version_id).first()
+        
+        if not version:
+            return jsonify({'error': 'Версия не найдена'}), 404
+        
+        return jsonify(version.to_dict())
+        
+    except Exception as e:
+        return jsonify({'error': 'Ошибка при получении версии маршрута'}), 500
+
+@bp.route('/api/routes/<int:route_id>/versions/diff/<int:v1>/<int:v2>', methods=['GET'])
+@jwt_required()
+@require_permission('routes:read')
+def compare_route_versions(route_id, v1, v2):
+    """Сравнить две версии маршрута"""
+    try:
+        route = TechnologicalRoute.query.get_or_404(route_id)
+        
+        version1 = RouteVersion.query.filter_by(route_id=route_id, version_number=v1).first()
+        version2 = RouteVersion.query.filter_by(route_id=route_id, version_number=v2).first()
+        
+        if not version1 or not version2:
+            return jsonify({'error': 'Одна из версий не найдена'}), 404
+        
+        data1 = json.loads(version1.route_data)
+        data2 = json.loads(version2.route_data)
+        
+        # Простое сравнение - можно расширить для более детального анализа
+        diff = {
+            'version1': {
+                'number': version1.version_number,
+                'data': data1,
+                'created_at': version1.created_at.isoformat(),
+                'created_by': version1.creator.username if version1.creator else None
+            },
+            'version2': {
+                'number': version2.version_number,
+                'data': data2,
+                'created_at': version2.created_at.isoformat(),
+                'created_by': version2.creator.username if version2.creator else None
+            },
+            'changes': []
+        }
+        
+        # Сравнить основные поля
+        for field in ['name', 'description', 'status', 'estimated_duration', 'complexity_level']:
+            if data1.get(field) != data2.get(field):
+                diff['changes'].append({
+                    'field': field,
+                    'old_value': data1.get(field),
+                    'new_value': data2.get(field)
+                })
+        
+        # Сравнить операции
+        ops1 = set([op['id'] for op in data1.get('operations', [])])
+        ops2 = set([op['id'] for op in data2.get('operations', [])])
+        
+        if ops1 != ops2:
+            diff['changes'].append({
+                'field': 'operations',
+                'old_value': list(ops1),
+                'new_value': list(ops2),
+                'added_operations': list(ops2 - ops1),
+                'removed_operations': list(ops1 - ops2)
+            })
+        
+        return jsonify(diff)
+        
+    except Exception as e:
+        return jsonify({'error': 'Ошибка при сравнении версий маршрута'}), 500 
