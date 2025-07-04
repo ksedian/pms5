@@ -8,59 +8,292 @@ alwaysApply: true
 
 # High Level Overview of the Repository
 
-This repository contains a software project, likely a web application, given the presence of frontend and backend components. The file summary suggests a focus on code analysis and automated processes, potentially for code review or AI-assisted development. The exclusion of various file types indicates a focus on source code and configuration files.
+This repository contains a full-stack web application for user authentication and role-based access control (RBAC) built with Python (likely using Flask) and React for the frontend. The application provides a secure authentication system, including features like two-factor authentication (2FA), and an administrative interface for managing users, roles, and permissions. The backend utilizes a PostgreSQL database, and the frontend leverages Material UI for a modern user interface. The presence of audit logs indicates a focus on security and accountability. The project is structured to be modular and maintainable, with clear separation of concerns between the frontend and backend components.
 
 # Technologies Used
 
-*   **Frontend:** Likely uses JavaScript, HTML, and CSS for the user interface. The presence of build configurations and potential minified files suggests a modern frontend development workflow.
-*   **Backend:** The presence of Go files indicates Go is used for backend development.
-*   **Database:** The database technology is not explicitly mentioned, but the presence of migrations suggests the usage of a database.
-*   **Build System:** Likely uses a build system like `npm` or `go build` depending on the backend and frontend technology used.
+1.  **Frontend**:
+    *   React
+    *   TypeScript
+    *   Material UI
+    *   React Router
+    *   Axios
+    *   React Hook Form
+2.  **Backend**:
+    *   Python
+    *   Flask
+    *   SQLAlchemy
+    *   PostgreSQL
+    *   Flask-JWT-Extended
+    *   Flask-Bcrypt
+    *   Flask-Limiter
+    *   Celery
+3.  **Database**:
+    *   PostgreSQL
+4.  **Authentication**:
+    *   JWT (JSON Web Tokens)
+    *   2FA (Two-Factor Authentication) with TOTP (Time-Based One-Time Password)
+5.  **Security**:
+    *   Argon2 (password hashing)
+    *   RBAC (Role-Based Access Control)
+    *   Audit Logging
+    *   Rate Limiting
+6.  **Other**:
+    *   Redis (for Celery)
+    *   CORS (Cross-Origin Resource Sharing)
 
 # Top Level Folders Structure
 
-The provided information does not include the directory structure, therefore, I am unable to analyze the top-level folders.
+1.  **`.cursor/`**:
+    *   **Purpose**: This directory contains rules and guidelines, likely for an AI-assisted development tool like Cursor.
+    *   **Recommendations**: This folder should contain documentation and rules that define the project's conventions, coding standards, and development workflow.  It is critical for the automation of the development process.
+
+2.  **`app/`**:
+    *   **Purpose**: This is the core backend application code, likely a Flask application. It houses the modules for handling authentication, API endpoints, and database interactions.
+    *   **Recommendations**:  This folder should be the central focus for backend development. Further sub-structuring can be done to organize modules for business logic, data access, and utility functions.
+    *   **Subfolders**:
+        *   `admin/`: Contains the admin-related routes and functionality, including user, role, and permission management.
+        *   `api/`: Contains the API endpoints.
+        *   `auth/`: Handles user authentication and authorization logic.
+        *   `services/`: Contains service classes for business logic, such as SMS sending.
+        *   `__init__.py`: Initializes the Flask application and registers blueprints.
+        *   `config.py`: Defines application configuration settings.
+        *   `models.py`: Defines the database models using SQLAlchemy.
+        *   `seed_data.py`: Contains scripts for seeding the database with initial data (roles, permissions, admin user).
+        *   `utils.py`: Contains utility functions, like authorization decorators, and audit logging.
+
+3.  **`docs/`**:
+    *   **Purpose**: Contains documentation for the project, including API documentation, code review reports, and security audit summaries.
+    *   **Recommendations**: This is a critical folder for maintaining project knowledge. It should be updated regularly to reflect changes in the codebase.
+
+4.  **`frontend/`**:
+    *   **Purpose**: This directory contains the React frontend application.
+    *   **Recommendations**: This is where the bulk of the frontend development will occur. The structure promotes component reusability and maintainability.
+    *   **Subfolders**:
+        *   `public/`: Contains static assets like `index.html`, `robots.txt`, and other public files.
+        *   `src/`: Contains the source code for the React application.
+            *   `components/`: Contains reusable React components.
+            *   `context/`:  Manages React context providers.
+            *   `pages/`: Contains the application's pages/views.
+            *   `services/`: Handles API calls to the backend.
+            *   `theme/`: Contains the Material UI theme configuration.
+            *   `types/`: Contains TypeScript type definitions.
+            *   `App.tsx`: The main application component.
+            *   `index.tsx`: Entry point for the React app.
+            *   `.env`:  Environment variables used by the frontend.
+            *   `.gitignore`: Specifies files that should be ignored by Git.
+            *   `README.md`: Documentation for the frontend application.
+            *   `App.test.tsx`: Contains unit tests for the application.
+
+5.  **`migrations/`**:
+    *   **Purpose**: Contains Alembic migration scripts for managing the database schema.
+    *   **Recommendations**: This folder is critical for database management.  Ensure that all database schema changes are made through migrations.
+
+6.  **`plans/`**:
+    *   **Purpose**: Contains documentation and plans for the project, like execution plans and implementation plans.
+    *   **Recommendations**: This is a valuable resource for understanding the project's goals, design decisions, and progress.
+
+7.  **.gitignore**:
+    *   **Purpose**: Specifies files and directories that Git should ignore.
+
+8.  **DEPLOYMENT\_STATUS.md**:
+    *   **Purpose**: Contains information about the deployment status and progress.
+
+9.  **env.example**:
+    *   **Purpose**: Provides a template for environment variables.
+
+10. IMPLEMENTATION\_STATUS.md:
+    *   **Purpose**: Document the implementation progress.
+
+11. README.md:
+    *   **Purpose**: Provides a high-level overview of the project, instructions for setup, and usage.
+
+12. requirements\_minimal.txt:
+    *   **Purpose**: Minimal dependencies.
+
+13. requirements.txt:
+    *   **Purpose**: Contains a list of the project's Python dependencies.
+
+14. run.py:
+    *   **Purpose**: Entry point for running the Flask application.
+
+15. simple\_run.py:
+    *   **Purpose**: A simple Flask app.
+
+16. STEP\_2\_SUMMARY.md:
+    *   **Purpose**: Summary of Step 2.
+
+17. TASK\_COMPLETION\_REPORT.md:
+    *   **Purpose**: Completion report.
+
+18. test\_auth\_system.py:
+    *   **Purpose**: Contains tests for the authentication system.
+
+19. test\_structure.py:
+    *   **Purpose**: Tests the project's structure.
 
 # Code Organization
 
-Based on the general characteristics of software projects, the code is likely organized as follows:
+The code is organized in a modular fashion, with clear separation of concerns between the frontend and backend.
 
-*   **Frontend:** The frontend code is likely organized into components, pages, and utilities. Components would encapsulate reusable UI elements, pages represent different views or sections of the application, and utilities contain helper functions or modules.
-*   **Backend:** The backend code is likely organized into modules or packages, each responsible for specific functionalities (e.g., user authentication, data access, business logic).
-*   **Configuration:** Configuration files, such as `.env` files or configuration files in the backend, are used to manage the application's settings.
+1.  **Frontend**:
+    *   Uses React with TypeScript, and Material UI.
+    *   The `src/` directory is organized into components, pages, services, context, types, and theme directories.
+    *   Components are reusable UI elements organized by function (e.g., authentication, admin).
+    *   Pages represent different views of the application.
+    *   API calls are handled by services.
+    *   Authentication state is managed using React Context.
+    *   Theming is managed using Material UI themes.
+
+2.  **Backend**:
+    *   Uses Flask for the web framework.
+    *   The `app/` directory is organized into blueprints (`auth`, `admin`, `api`).
+    *   Models are defined using SQLAlchemy.
+    *   Authentication logic is handled in the `auth` module.
+    *   Admin functionality is in the `admin` module.
+    *   API endpoints are in the `api` module.
+    *   Utility functions are in the `utils.py` file.
+    *   Database migrations are handled using Alembic.
 
 # Notable Patterns
 
-Without the code content, it is difficult to determine specific design patterns. However, common patterns in web applications include:
-
-*   **Model-View-Controller (MVC) or Model-View-ViewModel (MVVM):** For structuring the frontend code.
-*   **RESTful API:** For the backend to expose functionalities.
-*   **Dependency Injection:** Common in Go applications for managing dependencies.
+1.  **RBAC (Role-Based Access Control)**:
+    *   Implemented using roles, permissions, and authorization decorators (`@require_permission`, `@require_role`).
+2.  **JWT Authentication**:
+    *   Used for secure authentication and session management.
+3.  **Modular Design**:
+    *   The application is structured into modules (blueprints) in the backend and components in the frontend.
+4.  **Dependency Injection**:
+    *   Likely used implicitly through Flask's dependency injection capabilities.
+5.  **API Client**:
+    *   Axios with interceptors to manage authentication headers.
+6.  **State Management**:
+    *   React Context for managing authentication state.
+7.  **Error Handling**:
+    *   Centralized error handling mechanisms in both frontend and backend.
+8.  **Reusable Components**:
+    *   Frontend utilizes reusable components for the UI.
 
 # Testing Approach
 
-The testing approach is not explicitly mentioned. However, based on general practices, the testing approach likely includes:
+The repository employs a testing approach to ensure code quality. The presence of `test_auth_system.py` and `test_structure.py` indicates an effort to test both the structure and functionality of the authentication system.
 
-*   **Unit Tests:** To verify the functionality of individual components or modules.
-*   **Integration Tests:** To verify interactions between different components or modules.
-*   **End-to-End Tests:** To simulate user interactions and test the entire application flow.
+1.  **Unit Tests**:
+    *   The `test_auth_system.py` file likely contains unit tests for the models, authentication logic, and permission system.
+    *   Tests are used to verify the functionality of individual components or modules.
+2.  **Integration Tests**:
+    *   Integration tests are used to verify interactions between different components or modules.
+3.  **Structure Tests**:
+    *   The `test_structure.py` is used to ensure the correct structure of files and folders.
 
 # Other Important Details
 
-*   **Build Process:**
-    *   The build process is likely automated, using tools like `npm` for the frontend and `go build` for the backend.
-    *   Build commands would include tasks such as dependency installation, code compilation, and asset minification.
-*   **Database Schema and Upgrades:**
-    *   The presence of migrations suggests the use of a database and a system for managing database schema changes.
-    *   Database schema upgrades are likely handled through migration scripts.
-*   **Documentation:**
-    *   Documentation is not directly mentioned, but it is expected that there is documentation that explains the usage and functionality of the application.
-*   **Deployment:**
-    *   Deployment details are not present in the provided summary.
-*   **Programming Languages:**
-    *   Go is used for backend development.
-    *   JavaScript, HTML, and CSS are used for frontend development.
+1.  **Build Process**:
+    *   The frontend uses Create React App, which handles the build process (dependency installation, code compilation, and asset minification).
+    *   The backend uses `run.py` and likely relies on standard Python package management (pip).
+2.  **Database Schema and Upgrades**:
+    *   The database schema is managed through Alembic migrations.
+3.  **Documentation**:
+    *   The `README.md` provides a high-level overview and instructions.
+    *   The `docs/` folder contains API documentation.
+4.  **Deployment**:
+    *   Deployment details are not explicitly mentioned.
+5.  **Programming Languages**:
+    *   Python (backend)
+    *   JavaScript/TypeScript, HTML, and CSS (frontend)
+6.  **Build Commands**:
+    *   Frontend: `npm start`, `npm run build`
+    *   Backend: `python run.py`
+7.  **Environment Variables**:
+    *   Used for configuration (database connection, API keys, etc.) and must be set in a `.env` file.
 
 # User experience flows
 
-The provided information does not include details about user interface, therefore, I am unable to analyze user experience flows.
+The application has the following user flows:
+
+1.  **Login Flow**:
+    *   The user is presented with the login form.
+    *   The user enters their username and password.
+    *   The application sends a login request to the backend API.
+    *   If the login is successful, the user is authenticated, and a JWT token is generated.
+    *   If the user has 2FA enabled, they are prompted to enter a 2FA code.
+    *   The user is redirected to the dashboard or the originally requested page.
+2.  **Registration Flow**:
+    *   The user is presented with a registration form.
+    *   The user enters their username, email, and password.
+    *   The application sends a registration request to the backend API.
+    *   If the registration is successful, the user is registered.
+    *   The user is automatically logged in.
+    *   The user is redirected to the dashboard.
+3.  **Dashboard Flow**:
+    *   The user is redirected to the dashboard after successful login.
+    *   The dashboard displays user profile information and links to other features.
+4.  **Admin Panel Flow**:
+    *   The user clicks on the Admin Panel link.
+    *   If the user is an admin, they are redirected to the Admin Panel.
+    *   The admin panel allows the user to manage users, roles, and permissions.
+5.  **2FA Setup Flow**:
+    *   The user navigates to the 2FA setup page.
+    *   The user is presented with a QR code.
+    *   The user scans the QR code with their authenticator app.
+    *   The user enters the 2FA code from their authenticator app.
+    *   The user is redirected to the dashboard.
+
+## Screens/Pages:
+
+1.  **Login Page**
+    *   Elements:
+        *   Username input
+        *   Password input
+        *   Login button
+        *   Register button
+        *   Error messages (if login fails)
+2.  **Dashboard Page**
+    *   Elements:
+        *   User profile information
+        *   Admin Panel link (visible to admins only)
+        *   Quick action buttons
+3.  **Admin Page**
+    *   Elements:
+        *   Navigation tabs for:
+            *   Role Management
+            *   Permission Matrix
+            *   User Role Assignment
+            *   User Management
+4.  **Unauthorized Page**
+    *   Elements:
+        *   Error message indicating access is forbidden
+        *   Links back to the dashboard or previous page
+
+## User Flows:
+
+1.  **Login:**
+    *   User enters username and password.
+    *   User clicks "Login".
+    *   If successful, user is redirected to the Dashboard.
+    *   If 2FA is enabled:
+        *   User enters 2FA code.
+        *   User is redirected to the Dashboard.
+    *   If login fails:
+        *   Error message is displayed.
+2.  **Register:**
+    *   User clicks "Register".
+    *   User enters registration details.
+    *   User clicks "Register".
+    *   If successful, user is redirected to the Dashboard.
+    *   If registration fails:
+        *   Error message is displayed.
+3.  **Dashboard:**
+    *   User views profile information.
+    *   Admin users can navigate to the Admin Panel.
+    *   User can click on quick action buttons.
+4.  **Admin Panel:**
+    *   Admin user navigates to the Admin Panel.
+    *   Admin user can switch between tabs:
+        *   Role Management: View, create, edit, delete roles.
+        *   Permission Matrix: View and manage permissions for roles.
+        *   User Role Assignment: Assign and revoke roles to users.
+        *   User Management: View, activate, deactivate, and unlock users.
+5.  **Unauthorized:**
+    *   User is redirected to the Unauthorized page if they do not have access.
+    *   User can navigate back to the Dashboard or previous page.

@@ -1,0 +1,25 @@
+nohup: ignoring input
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.218.130:5001
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+/home/pakk/devplan/workspace/features/user_authentication_and_roleb/pms5/venv_new/lib/python3.11/site-packages/flask_limiter/extension.py:336: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 521-841-371
+127.0.0.1 - - [04/Jul/2025 13:16:39] "POST /api/auth/login HTTP/1.1" 200 -
+127.0.0.1 - - [04/Jul/2025 13:16:39] "[35m[1mPOST /api/routes HTTP/1.1[0m" 201 -
+127.0.0.1 - - [04/Jul/2025 13:16:39] "GET /api/routes/6 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Jul/2025 13:16:39] "PUT /api/routes/6 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Jul/2025 13:16:39] "[35m[1mPOST /api/operations HTTP/1.1[0m" 201 -
+127.0.0.1 - - [04/Jul/2025 13:16:39] "[35m[1mPOST /api/bom/items HTTP/1.1[0m" 201 -
+127.0.0.1 - - [04/Jul/2025 13:16:39] "[35m[1mPOST /api/bom/items HTTP/1.1[0m" 201 -
+127.0.0.1 - - [04/Jul/2025 13:16:39] "GET /api/bom HTTP/1.1" 200 -
+127.0.0.1 - - [04/Jul/2025 13:16:39] "GET /api/routes HTTP/1.1" 200 -
+127.0.0.1 - - [04/Jul/2025 13:16:39] "GET /api/operations HTTP/1.1" 200 -

@@ -34,10 +34,11 @@ def create_app(config_name=None):
     # Configuration
     if config_name == 'testing':
         app.config.from_object('app.config.TestingConfig')
-    elif config_name == 'development':
-        app.config.from_object('app.config.DevelopmentConfig')
-    else:
+    elif config_name == 'production':
         app.config.from_object('app.config.ProductionConfig')
+    else:
+        # Use development config by default
+        app.config.from_object('app.config.DevelopmentConfig')
     
     # Initialize extensions with app
     db.init_app(app)
@@ -67,6 +68,13 @@ def create_app(config_name=None):
     
     from app.api import bp as api_bp
     app.register_blueprint(api_bp, url_prefix='/api')
+    
+    # Register new blueprints for technological routes and BOM management
+    from app.routes_management import bp as routes_bp
+    app.register_blueprint(routes_bp)
+    
+    from app.bom_management import bp as bom_bp
+    app.register_blueprint(bom_bp)
     
     # JWT error handlers
     @jwt.expired_token_loader

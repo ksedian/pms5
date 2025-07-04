@@ -10,11 +10,23 @@ def create_default_permissions():
         ('tasks:update', 'Update tasks', 'tasks', 'update'),
         ('tasks:delete', 'Delete tasks', 'tasks', 'delete'),
         
-        # Route permissions
+        # Route permissions (extended for technological routes)
         ('routes:create', 'Create new routes', 'routes', 'create'),
         ('routes:read', 'View routes', 'routes', 'read'),
         ('routes:update', 'Update routes', 'routes', 'update'),
         ('routes:delete', 'Delete routes', 'routes', 'delete'),
+        
+        # Operation permissions
+        ('operations:create', 'Create new operations', 'operations', 'create'),
+        ('operations:read', 'View operations', 'operations', 'read'),
+        ('operations:update', 'Update operations', 'operations', 'update'),
+        ('operations:delete', 'Delete operations', 'operations', 'delete'),
+        
+        # BOM permissions
+        ('bom:create', 'Create new BOM items', 'bom', 'create'),
+        ('bom:read', 'View BOM items', 'bom', 'read'),
+        ('bom:update', 'Update BOM items', 'bom', 'update'),
+        ('bom:delete', 'Delete BOM items', 'bom', 'delete'),
         
         # Report permissions
         ('reports:create', 'Create new reports', 'reports', 'create'),
@@ -59,6 +71,8 @@ def create_default_roles():
         ('engineer', 'Engineer role with extended access', [
             'tasks:create', 'tasks:read', 'tasks:update', 'tasks:delete',
             'routes:create', 'routes:read', 'routes:update', 'routes:delete',
+            'operations:create', 'operations:read', 'operations:update', 'operations:delete',
+            'bom:create', 'bom:read', 'bom:update', 'bom:delete',
             'reports:read'
         ]),
         ('manager', 'Manager role with management access', [
@@ -70,6 +84,8 @@ def create_default_roles():
         ('admin', 'Administrator role with full access', [
             'tasks:create', 'tasks:read', 'tasks:update', 'tasks:delete',
             'routes:create', 'routes:read', 'routes:update', 'routes:delete',
+            'operations:create', 'operations:read', 'operations:update', 'operations:delete',
+            'bom:create', 'bom:read', 'bom:update', 'bom:delete',
             'reports:create', 'reports:read', 'reports:update', 'reports:delete',
             'users:create', 'users:read', 'users:update', 'users:delete',
             'roles:create', 'roles:read', 'roles:update', 'roles:delete',
@@ -100,7 +116,7 @@ def create_admin_user():
     """Create default admin user"""
     admin_username = 'admin'
     admin_email = 'admin@mes.local'
-    admin_password = 'AdminPassword123!'
+    admin_password = 'admin123'
     
     # Check if admin user already exists
     admin_user = User.query.filter_by(username=admin_username).first()
